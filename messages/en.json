@@ -1,0 +1,25 @@
+{
+    "HomePage": {
+      "title": "Website",
+      "about": "Go to the about page"
+      },
+    "Navigation": {
+      "en": "ENG",
+      "ka": "GEO",
+      "main": "MAIN",
+      "about": "ABOUT US",
+      "wines": "WINES",
+      "culture": "CULTURE",
+      "contact": "CONTACT"
+    },
+    "About": {
+      "company": "ABOUT COMPANY"
+    },
+    "Culture": {
+      "rarityWines": "RARITY WINES COLLECTION"
+    },
+    "Contact": {
+      "news": "NEWS",
+      "contact": "CONTACT"
+    }
+}

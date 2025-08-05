@@ -1,0 +1,25 @@
+{
+	"HomePage": {
+		"title": "საიტი",
+		"about": "Go to the about page"
+	},
+	"Navigation": {
+		"en": "ინგ",
+		"ka": "ქარ",
+		"main": "მთავარი",
+		"about": "ჩვენ შესახებ",
+		"wines": "ღვინო",
+		"culture": "კულტურა",
+		"contact": "კონტაქტი"
+	},
+	"About": {
+		"company": "კომპანიის შესახებ"
+	},
+	"Culture": {
+		"rarityWines": "იშვიათი ღვინოების კოლექცია"
+	},
+	"Contact": {
+		"news": "სიახლეები",
+		"contact": "კონტაქტი"
+	}
+}
