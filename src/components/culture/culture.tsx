@@ -44,21 +44,21 @@ const Culture = () => {
 				<div className='z-10 w-full max-w-lg space-y-8 md:space-y-12 lg:max-w-4xl'>
 					{/* First Text Block - Saperavi Description */}
 					<div className='text-center'>
-						<div className='p-6 sm:p-8 md:px-16'>
-							<p className='absolute left-[120px] right-8 top-[25%] text-justify text-sm leading-relaxed text-gray-200 xs:top-[35%] sm:left-[150px] sm:right-16 sm:text-base md:static md:text-lg lg:left-[180px]'>
+						<div className='p-6 sm:p-8 md:px-16 lg:px-28'>
+							<p className='absolute left-[120px] right-8 top-[25%] text-justify text-sm leading-relaxed text-gray-200 xs:top-[35%] sm:left-[150px] sm:right-16 sm:text-base md:static md:text-lg'>
 								Saperavi is Georgia&apos;s iconic red grape - deep in color, bold in flavor, and naturally full-bodied.
 								It bursts with notes of dark berries, plum, and spice, balanced by firm tannins and vibrant acidity. A
 								wine of strength and soul, Saperavi is perfect for both aging and memorable moments.
 							</p>
 						</div>
 					</div>
-					<div className='invisible h-[1px] w-full px-16 md:visible'>
+					<div className='invisible h-[1px] w-full px-16 md:visible lg:px-28'>
 						<div className='h-full w-full rounded-lg bg-white'></div>
 					</div>
 					{/* Second Text Block - Rkatsiteli Description */}
 					<div className='text-center'>
-						<div className='p-6 sm:p-8 md:px-16'>
-							<p className='absolute left-8 right-[120px] top-[60%] text-justify text-sm leading-relaxed text-gray-200 xs:top-[70%] sm:left-16 sm:right-[150px] sm:text-base md:static md:text-lg lg:right-[180px]'>
+						<div className='p-6 sm:p-8 md:px-16 lg:px-28'>
+							<p className='absolute left-8 right-[120px] top-[60%] text-justify text-sm leading-relaxed text-gray-200 xs:top-[70%] sm:left-16 sm:right-[150px] sm:text-base md:static md:text-lg'>
 								Rkatsiteli is Georgia&apos;s iconic white grape - crisp, refined, and beautifully expressive. It offers
 								fresh acidity with notes of green apple, pear, and a touch of citrus blossom. Bright and versatile, it
 								pairs effortlessly with a wide range of dishes and moods.

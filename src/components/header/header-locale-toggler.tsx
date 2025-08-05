@@ -10,7 +10,7 @@ const LocaleToggler = () => {
 	const translations = useTranslations('Navigation')
 	const locale = useLocale()
 	return (
-		<Tabs defaultValue={locale === 'en' ? 'en' : 'ka'} className='mr-auto w-[80px] sm:w-[140px]'>
+		<Tabs defaultValue={locale === 'en' ? 'en' : 'ka'} className='invisible mr-auto w-[80px] sm:w-[140px]'>
 			<TabsList className='w-full bg-transparent text-sm sm:text-lg'>
 				<TabsTrigger
 					className='group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-1 py-2 text-sm font-medium transition-colors hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 data-[state=active]:shadow-none sm:text-lg'
