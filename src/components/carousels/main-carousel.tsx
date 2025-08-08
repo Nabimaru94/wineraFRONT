@@ -2,22 +2,38 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
+// Types
+interface Slide {
+	id: number
+	src: string
+	alt: string
+}
+
+interface ImageProps {
+	src: string
+	alt: string
+	className?: string
+	[key: string]: unknown
+}
+
 // Mock Next.js Image component for demo purposes
-const Image = ({ src, alt, className, ...props }) => <img src={src} alt={alt} className={className} {...props} />
+const Image: React.FC<ImageProps> = ({ src, alt, className, ...props }) => (
+	<img src={src} alt={alt} className={className} {...props} />
+)
 
-const MainCarousel = () => {
-	const [currentSlide, setCurrentSlide] = useState(0)
-	const [isDragging, setIsDragging] = useState(false)
-	const [startPos, setStartPos] = useState(0)
-	const [currentTranslate, setCurrentTranslate] = useState(0)
-	const [prevTranslate, setPrevTranslate] = useState(0)
-	const [animationId, setAnimationId] = useState(null)
-	const [actualSlide, setActualSlide] = useState(1) // Start at first real slide (index 1)
+const MainCarousel: React.FC = () => {
+	const [currentSlide, setCurrentSlide] = useState<number>(0)
+	const [isDragging, setIsDragging] = useState<boolean>(false)
+	const [startPos, setStartPos] = useState<number>(0)
+	const [currentTranslate, setCurrentTranslate] = useState<number>(0)
+	const [prevTranslate, setPrevTranslate] = useState<number>(0)
+	const [animationId, setAnimationId] = useState<number | null>(null)
+	const [actualSlide, setActualSlide] = useState<number>(1) // Start at first real slide (index 1)
 
-	const carouselRef = useRef(null)
+	const carouselRef = useRef<HTMLDivElement>(null)
 
 	// Sample images - replace with your actual images
-	const slides = [
+	const slides: Slide[] = [
 		{
 			id: 1,
 			src: '/assets/carousel/1.jpg',
@@ -47,7 +63,7 @@ const MainCarousel = () => {
 		slides[0], // Clone of first slide
 	]
 
-	const goToSlide = (index, immediate = false) => {
+	const goToSlide = (index: number, immediate = false) => {
 		setActualSlide(index)
 		const translateValue = -index * 100
 		setPrevTranslate(translateValue)
@@ -96,15 +112,15 @@ const MainCarousel = () => {
 		}
 	}
 
-	const jumpToSlide = (index) => {
+	const jumpToSlide = (index: number) => {
 		const newIndex = index + 1 // Offset by 1 for clone
 		setCurrentSlide(index)
 		setActualSlide(newIndex)
 		goToSlide(newIndex)
 	}
 
-	const getPositionX = (e) => {
-		return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX
+	const getPositionX = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.TouchEvent<HTMLDivElement>) => {
+		return 'touches' in e ? e.touches[0].clientX : e.pageX
 	}
 
 	const animation = () => {
@@ -117,7 +133,7 @@ const MainCarousel = () => {
 		}
 	}
 
-	const dragStart = (e) => {
+	const dragStart = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.TouchEvent<HTMLDivElement>) => {
 		// Prevent scrolling on touch devices
 		if (e.type === 'touchstart') {
 			e.preventDefault()
@@ -137,7 +153,7 @@ const MainCarousel = () => {
 		setAnimationId(id)
 	}
 
-	const dragMove = (e) => {
+	const dragMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.TouchEvent<HTMLDivElement>) => {
 		if (isDragging) {
 			e.preventDefault() // Prevent scrolling
 			const currentPosition = getPositionX(e)
@@ -227,6 +243,7 @@ const MainCarousel = () => {
 				>
 					<ChevronRight className='h-6 w-6 text-gray-700' />
 				</button>
+				{/* Dot indicators */}
 				<div className='absolute bottom-[0%] left-[50%] flex translate-x-[-50%] items-center justify-center space-x-2 py-2'>
 					{slides.map((_, index) => (
 						<button
@@ -240,8 +257,6 @@ const MainCarousel = () => {
 					))}
 				</div>
 			</div>
-
-			{/* Dot indicators */}
 		</div>
 	)
 }
