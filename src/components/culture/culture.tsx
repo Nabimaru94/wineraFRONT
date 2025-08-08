@@ -7,7 +7,7 @@ const Culture = () => {
 	const translate = useTranslations('Culture')
 	return (
 		<div
-			className='relative flex min-h-[80vh] flex-col px-4 sm:px-8 md:min-h-screen lg:px-16'
+			className='relative flex min-h-[120vh] flex-col px-4 xs:min-h-screen sm:px-8 lg:px-16'
 			style={{ backgroundImage: 'linear-gradient(to bottom left, #2a2a2a, #424242)' }}
 		>
 			{/* Anchor for navigation */}
@@ -36,7 +36,7 @@ const Culture = () => {
 
 			{/* Header - Middle Top */}
 			<div className='flex justify-center pt-16 sm:pt-20 md:pt-24'>
-				<h1 className='text-center text-xl text-white sm:text-2xl'>{translate('rarityWines')}</h1>
+				<h1 className='text-center text-xl font-semibold text-white sm:text-2xl'>{translate('rarityWines')}</h1>
 			</div>
 
 			{/* Main Content Area - Center */}
@@ -45,7 +45,7 @@ const Culture = () => {
 					{/* First Text Block - Saperavi Description */}
 					<div className='text-center'>
 						<div className='p-6 sm:p-8 md:px-16 lg:px-28'>
-							<p className='absolute left-[120px] right-8 top-[25%] text-justify text-sm leading-relaxed text-gray-200 xs:top-[35%] sm:left-[150px] sm:right-16 sm:text-base md:static md:text-lg'>
+							<p className='absolute left-[120px] right-8 top-[20%] text-justify text-sm leading-relaxed text-gray-200 xs:top-[35%] sm:left-[150px] sm:right-16 sm:text-base md:static md:text-lg'>
 								Saperavi is Georgia&apos;s iconic red grape - deep in color, bold in flavor, and naturally full-bodied.
 								It bursts with notes of dark berries, plum, and spice, balanced by firm tannins and vibrant acidity. A
 								wine of strength and soul, Saperavi is perfect for both aging and memorable moments.

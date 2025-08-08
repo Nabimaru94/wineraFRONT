@@ -67,6 +67,10 @@ body {
   font-optical-sizing: auto;
   /* font-weight: <weight>; */
   font-style: normal;
+  .embla__slide > * {
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  }
 }
 
 @layer base {

@@ -34,7 +34,7 @@ const Contact = async () => {
 				</div>
 			</div> */}
 			<PageBorder />
-			<h1 className='mt-4 text-xl sm:text-2xl'>{translate('contact')}</h1>
+			<h1 className='mt-4 text-xl font-semibold sm:text-2xl'>{translate('contact')}</h1>
 			<iframe
 				className='mt-8 w-full max-w-[1200px]'
 				height='300'

@@ -6,11 +6,11 @@ import React from 'react'
 const About = async () => {
 	const translate = await getTranslations('About')
 	return (
-		<div className='about relative flex h-screen flex-col items-center bg-[#F1EEE8] px-8 pt-8 text-black xs:pt-14 sm:px-20'>
+		<div className='about relative flex h-[125vh] flex-col items-center bg-[#F1EEE8] px-8 pt-8 text-black xs:pt-14 sm:h-screen sm:px-20'>
 			<div id='about-page' className='absolute top-[-8rem] md:top-[-6rem]'></div>
 			<div className='flex max-w-[1200px] flex-col items-center'>
 				<PageBorder />
-				<h1 className='mt-10 text-xl sm:mt-4 sm:text-2xl'>{translate('company')}</h1>
+				<h1 className='mt-10 text-xl font-semibold sm:mt-4 sm:text-2xl'>{translate('company')}</h1>
 				<p className='mt-8 max-w-[900px] text-justify text-sm leading-relaxed sm:text-base md:text-lg'>
 					Winera is a family-owned Georgian winery. Our journey begins in the heart of Kakheti - Napareuli, where our
 					winery and production facility are located. Surrounded by 22 hectares of owned vineyards.
