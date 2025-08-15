@@ -20,6 +20,10 @@ const About = async () => {
 					full of character. Every step - from hand-harvesting our grapes to bottling at our Napareuli winery - is
 					carried out with care and precision, ensuring quality in every bottle.
 				</p>
+				<p className='mt-8 max-w-[900px] text-justify text-sm leading-relaxed sm:text-base md:text-lg'>
+					We believe wine is more than a product—it’s a reflection of place, people, and culture. Winera exists to share
+					the soul of Georgian winemaking with the world through wines that are bold, approachable, and memorable.
+				</p>
 				<Image
 					className='mt-10 h-[100px] w-[550px] xs:h-[200px] lg:h-[280px] lg:w-[700px]'
 					src={'/assets/pageOrnament1.webp'}
@@ -27,10 +31,6 @@ const About = async () => {
 					width={800}
 					height={320}
 				/>
-				<h2 className='mt-8 max-w-[900px] text-justify text-sm leading-relaxed sm:text-base md:text-lg'>
-					We believe wine is more than a product—it’s a reflection of place, people, and culture. Winera exists to share
-					the soul of Georgian winemaking with the world through wines that are bold, approachable, and memorable.
-				</h2>
 			</div>
 		</div>
 	)

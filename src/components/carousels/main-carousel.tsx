@@ -24,6 +24,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, className, ...props }) => (
 const MainCarousel: React.FC = () => {
 	const [currentSlide, setCurrentSlide] = useState<number>(0)
 	const [isDragging, setIsDragging] = useState<boolean>(false)
+	const [hasMoved, setHasMoved] = useState<boolean>(false)
 	const [startPos, setStartPos] = useState<number>(0)
 	const [currentTranslate, setCurrentTranslate] = useState<number>(0)
 	const [prevTranslate, setPrevTranslate] = useState<number>(0)
@@ -137,12 +138,14 @@ const MainCarousel: React.FC = () => {
 		// Prevent scrolling on touch devices
 		if (e.type === 'touchstart') {
 			e.preventDefault()
-			setStartPos(getPositionX(e))
 		} else {
 			e.preventDefault()
-			setStartPos(getPositionX(e))
 		}
+
+		setStartPos(getPositionX(e))
 		setIsDragging(true)
+		setHasMoved(false) // Reset the moved flag
+
 		if (carouselRef.current) {
 			carouselRef.current.style.transition = 'none'
 		}
@@ -158,6 +161,13 @@ const MainCarousel: React.FC = () => {
 			e.preventDefault() // Prevent scrolling
 			const currentPosition = getPositionX(e)
 			const diff = currentPosition - startPos
+
+			// Mark that we've moved if there's any significant movement
+			if (Math.abs(diff) > 5) {
+				// 5px threshold to distinguish from accidental movement
+				setHasMoved(true)
+			}
+
 			const movePercentage = (diff / window.innerWidth) * 100
 			setCurrentTranslate(prevTranslate + movePercentage)
 		}
@@ -171,6 +181,16 @@ const MainCarousel: React.FC = () => {
 			cancelAnimationFrame(animationId)
 		}
 
+		// Only proceed with slide change if we actually moved
+		if (!hasMoved) {
+			// If we didn't move, just return to current position
+			if (carouselRef.current) {
+				carouselRef.current.style.transition = 'transform 0.3s ease-out'
+			}
+			goToSlide(actualSlide)
+			return
+		}
+
 		const movedBy = currentTranslate - prevTranslate
 
 		if (carouselRef.current) {
@@ -182,7 +202,7 @@ const MainCarousel: React.FC = () => {
 		} else if (movedBy > 25) {
 			prevSlide()
 		} else {
-			goToSlide(currentSlide)
+			goToSlide(actualSlide)
 		}
 	}
 

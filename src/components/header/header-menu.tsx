@@ -36,12 +36,12 @@ export function HeaderMenu() {
 
 	return (
 		<>
-			<div className='ml-auto flex w-[80px] justify-center sm:w-[140px]'>
+			<div className='absolute left-[10%] flex w-[60px] justify-center sm:w-[70px]'>
 				<Link href='/'>
 					<Image
-						src={'/assets/logo.webp'}
-						width={30}
-						height={40}
+						src={'/assets/logo.svg'}
+						width={300}
+						height={400}
 						alt=''
 						onClick={() => {
 							if (pathname !== '/') {
