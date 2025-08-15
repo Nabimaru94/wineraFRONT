@@ -5,7 +5,7 @@ import Culture from '@/components/culture/culture'
 
 export default function Home() {
 	return (
-		<div className='mt-32 flex w-[100%] flex-col md:mt-24'>
+		<div className='flex w-[100%] flex-col'>
 			<MainCarousel />
 			<About />
 			<Culture />
