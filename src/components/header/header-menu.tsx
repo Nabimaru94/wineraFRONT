@@ -36,7 +36,7 @@ export function HeaderMenu() {
 
 	return (
 		<>
-			<div className='absolute left-[10%] flex w-[60px] justify-center sm:w-[70px]'>
+			<div className='absolute left-[7%] flex w-[60px] justify-center sm:w-[70px]'>
 				<Link href='/'>
 					<Image
 						src={'/assets/logo.svg'}

@@ -4,7 +4,7 @@ import { HeaderMenu } from '@/components/header/header-menu'
 
 const Header = () => {
 	return (
-		<div className='header fixed relative top-0 z-50 flex h-32 w-full items-center bg-headerBackground text-[rgb(220,220,220)] md:h-24'>
+		<div className='header fixed top-0 z-50 flex h-32 w-full items-center bg-headerBackground text-[rgb(220,220,220)] md:h-24'>
 			<HeaderMenu />
 			{/* <LocaleToggler /> */}
 		</div>
